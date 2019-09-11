@@ -17,121 +17,118 @@ using System.Xml;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.Diagnostics;
-
-
-
-
+using ByteSizeLib;
 
 namespace PS4_Firmware_Checker
 {
     public partial class Form1 : Form
     {
         static string url;
+        private string sizeSYS;
+        private string sizeREC;
 
         public Form1()
         {
             InitializeComponent();
         }
-
-        static void checkFirmware()
-        {
-            
-
-            
-        }
-
         
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //checkFirmware();
             if (Main.Isconnected == true)
             { 
-
                 string path = Environment.CurrentDirectory;
                 if (!Directory.Exists(path + "\\Temp"))
                 {
                     Directory.CreateDirectory(path + "\\Temp");
                     using (WebClient webClient = new WebClient())
+                    try
                     {
                         webClient.DownloadFile("http://fus01.ps4.update.playstation.net/update/ps4/list/sa/ps4-updatelist.xml", path + "\\Temp\\ps4-updatelist.xml");
+
+                            XDocument xdoc = XDocument.Load(path + @"\\Temp\ps4-updatelist.xml");
+                            xdoc.Descendants("region").Select(sys => new
+                            {
+                                label = sys.Element("system_pup").Attribute("label"),
+                                sdkVersion = sys.Element("system_pup").Attribute("sdk_version"),
+                                fwVersion = sys.Element("system_pup").Attribute("version"),
+
+                            }).ToList().ForEach(sys =>
+                            {
+                                tbFWLabelSYS.Text = sys.label.ToString().Replace("label=", "").Replace("\"", "");
+                                tbSDKVersionSYS.Text = sys.sdkVersion.ToString().Replace("sdk_version=", "").Replace("\"", "");
+                                tbVersionSYS.Text = sys.fwVersion.ToString().Replace("version=", "").Replace("\"", "");
+                            });
+
+                            xdoc.Descendants("update_data").Select(misc => new
+                            {
+                                Size = misc.Element("image").Attribute("size"),
+
+                            }).ToList().ForEach(misc =>
+                            {
+                                sizeSYS = misc.Size.ToString().Replace("size=", "").Replace("\"", "");
+                                var size_int = Convert.ToInt32(sizeSYS);
+                                var size_final = ByteSize.FromBytes(size_int).ToString();
+
+                                tbSizeSYS.Text = size_final;
+                            });
+
+                            xdoc.Descendants("recovery_pup").Select(misc => new
+                            {
+                                size = misc.Element("image").Attribute("size"),
+
+                            }).ToList().ForEach(misc =>
+                            {
+                                sizeREC = misc.size.ToString().Replace("size=", "").Replace("\"", "");
+                                var size_int = Convert.ToInt32(sizeREC);
+                                var size_final = ByteSize.FromBytes(size_int).ToString();
+
+
+                                tbSizeREC.Text = size_final;
+                            });
+
+                            xdoc.Descendants("recovery_pup").Select(misc => new
+                            {
+                                Link = misc.Element("image")
+
+                            }).ToList().ForEach(misc =>
+                            {
+                                tbLinkREC.Text = misc.Link.ToString().Replace("<image size=\"", "").Replace("\"", "").Replace("\">", "").Replace("?dest=sa</image>", "").Replace(">", "").Replace(sizeREC, "");
+                            });
+
+                            xdoc.Descendants("update_data").Select(misc => new
+                            {
+                                Link = misc.Element("image")
+
+                            }).ToList().ForEach(misc =>
+                            {
+                                tbLinkSYS.Text = misc.Link.ToString().Replace("<image size=\"", "").Replace("\"", "").Replace("\">", "").Replace("?dest=sa</image>", "").Replace(">", "").Replace(tbSizeSYS.Text, "").Replace(sizeSYS, ""); ;
+                            });
+
+                            xdoc.Descendants("recovery_pup").Select(rec => new
+                            {
+                                label = rec.Element("system_pup").Attribute("label"),
+                                sdkVersion = rec.Element("system_pup").Attribute("sdk_version"),
+                                fwVersion = rec.Element("system_pup").Attribute("version"),
+
+                            }).ToList().ForEach(rec =>
+                            {
+                                tbFWLabelREC.Text = rec.label.ToString().Replace("label=", "").Replace("\"", "");
+                                tbSDKVersionREC.Text = rec.sdkVersion.ToString().Replace("sdk_version=", "").Replace("\"", "");
+                                tbFWVersion.Text = rec.fwVersion.ToString().Replace("version=", "").Replace("\"", "");
+                            });
+                    }
+                    catch
+                    {
+                        this.Hide();
+                        MessageBox.Show("No internet connection. Exiting..", "Error");
+                        Application.Exit();
                     }
                 }
-
-                XDocument xdoc = XDocument.Load(path + @"\\Temp\ps4-updatelist.xml");
-                xdoc.Descendants("region").Select(sys => new
-                {
-                    label = sys.Element("system_pup").Attribute("label"),
-                    sdkVersion = sys.Element("system_pup").Attribute("sdk_version"),
-                    fwVersion = sys.Element("system_pup").Attribute("version"),
-
-                }).ToList().ForEach(sys =>
-                {
-                    tbFWLabelSYS.Text = sys.label.ToString().Replace("label=", "").Replace("\"", "");
-                    tbSDKVersionSYS.Text = sys.sdkVersion.ToString().Replace("sdk_version=", "").Replace ("\"","");
-                    tbVersionSYS.Text = sys.fwVersion.ToString().Replace("version=", "").Replace("\"", "");
-                });
-
-                xdoc.Descendants("update_data").Select(misc => new
-                {
-                    Size = misc.Element("image").Attribute("size"),
-
-                }).ToList().ForEach(misc =>
-                {
-                    tbSizeSYS.Text = misc.Size.ToString().Replace("size=", "").Replace("\"", "");
-                });
-
-                xdoc.Descendants("recovery_pup").Select(misc => new
-                {
-                    size = misc.Element("image").Attribute("size"),
-
-                }).ToList().ForEach(misc =>
-                {
-                    tbSizeREC.Text = misc.size.ToString().Replace("size=", "").Replace("\"", "");
-                });
-
-                //
-
-                xdoc.Descendants("recovery_pup").Select(misc => new
-                {
-                    Link = misc.Element("image")
-
-                }).ToList().ForEach(misc =>
-                {
-                    tbLinkREC.Text = misc.Link.ToString().Replace("<image size=\"", "").Replace("\"", "").Replace("\">","").Replace("?dest=sa</image>", "").Replace(">", "").Replace(tbSizeREC.Text, "");
-                });
-
-                xdoc.Descendants("update_data").Select(misc => new
-                {
-                    Link = misc.Element("image")
-
-                }).ToList().ForEach(misc =>
-                {
-                    tbLinkSYS.Text = misc.Link.ToString().Replace("<image size=\"", "").Replace("\"", "").Replace("\">", "").Replace("?dest=sa</image>", "").Replace(">", "").Replace(tbSizeSYS.Text, "");
-                });
-
-                //
-
-                xdoc.Descendants("recovery_pup").Select(rec => new
-                {
-                    label = rec.Element("system_pup").Attribute("label"),
-                    sdkVersion = rec.Element("system_pup").Attribute("sdk_version"),
-                    fwVersion = rec.Element("system_pup").Attribute("version"),
-
-                }).ToList().ForEach(rec =>
-                {
-                    tbFWLabelREC.Text = rec.label.ToString().Replace("label=", "").Replace("\"", "");
-                    tbSDKVersionREC.Text = rec.sdkVersion.ToString().Replace("sdk_version=", "").Replace("\"", "");
-                    tbFWVersion.Text = rec.fwVersion.ToString().Replace("version=", "").Replace("\"", "");
-                });
-
-
             }
             else
             {
                 MessageBox.Show("No internet network detected. Please check your internet connection.", "Error");
-
             }
         }
 
