@@ -1,2 +1,2 @@
 # PS4-Firmware-Checker
-Checking the latest PS4 firmware (System &amp; Recovery FW)
+Simple tool to check the latest PS4 firmware release (System &amp; Recovery FW)
