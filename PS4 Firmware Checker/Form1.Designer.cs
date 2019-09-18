@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbFWLabelSYS = new System.Windows.Forms.TextBox();
-            this.tbSDKVersionSYS = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbVersionSYS = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbLinkSYS = new System.Windows.Forms.TextBox();
+            this.tbMD5SYS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbSizeSYS = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.tbVersionSYS = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbFWLabelSYS = new System.Windows.Forms.TextBox();
+            this.tbSDKVersionSYS = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbLinkREC = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.tbMD5REC = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tbSizeREC = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -57,69 +57,25 @@
             this.tbFWVersion = new System.Windows.Forms.TextBox();
             this.tbFWLabelREC = new System.Windows.Forms.TextBox();
             this.tbSDKVersionREC = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbFWVersionBETA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbSDKBETA = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbmandatory = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Firmware Label : ";
-            // 
-            // tbFWLabelSYS
-            // 
-            this.tbFWLabelSYS.Location = new System.Drawing.Point(206, 32);
-            this.tbFWLabelSYS.Name = "tbFWLabelSYS";
-            this.tbFWLabelSYS.Size = new System.Drawing.Size(132, 22);
-            this.tbFWLabelSYS.TabIndex = 1;
-            this.tbFWLabelSYS.TabStop = false;
-            this.tbFWLabelSYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbSDKVersionSYS
-            // 
-            this.tbSDKVersionSYS.Location = new System.Drawing.Point(206, 67);
-            this.tbSDKVersionSYS.Name = "tbSDKVersionSYS";
-            this.tbSDKVersionSYS.Size = new System.Drawing.Size(132, 22);
-            this.tbSDKVersionSYS.TabIndex = 3;
-            this.tbSDKVersionSYS.TabStop = false;
-            this.tbSDKVersionSYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 14);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "SDK Version :";
-            // 
-            // tbVersionSYS
-            // 
-            this.tbVersionSYS.Location = new System.Drawing.Point(206, 102);
-            this.tbVersionSYS.Name = "tbVersionSYS";
-            this.tbVersionSYS.Size = new System.Drawing.Size(132, 22);
-            this.tbVersionSYS.TabIndex = 5;
-            this.tbVersionSYS.TabStop = false;
-            this.tbVersionSYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 14);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Firmware Version :";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbLinkSYS);
+            this.groupBox1.Controls.Add(this.tbmandatory);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.tbMD5SYS);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.tbSizeSYS);
             this.groupBox1.Controls.Add(this.label9);
@@ -130,34 +86,37 @@
             this.groupBox1.Controls.Add(this.tbSDKVersionSYS);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(22, 14);
+            this.groupBox1.Location = new System.Drawing.Point(13, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(662, 226);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.Size = new System.Drawing.Size(662, 256);
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "System Firmware Info";
             // 
-            // tbLinkSYS
+            // tbMD5SYS
             // 
-            this.tbLinkSYS.Location = new System.Drawing.Point(206, 173);
-            this.tbLinkSYS.Name = "tbLinkSYS";
-            this.tbLinkSYS.Size = new System.Drawing.Size(411, 22);
-            this.tbLinkSYS.TabIndex = 12;
-            this.tbLinkSYS.TabStop = false;
+            this.tbMD5SYS.Location = new System.Drawing.Point(206, 206);
+            this.tbMD5SYS.Name = "tbMD5SYS";
+            this.tbMD5SYS.ReadOnly = true;
+            this.tbMD5SYS.Size = new System.Drawing.Size(411, 22);
+            this.tbMD5SYS.TabIndex = 12;
+            this.tbMD5SYS.TabStop = false;
+            this.tbMD5SYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(43, 178);
+            this.label10.Location = new System.Drawing.Point(43, 211);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 14);
+            this.label10.Size = new System.Drawing.Size(43, 14);
             this.label10.TabIndex = 11;
-            this.label10.Text = "Link :";
+            this.label10.Text = "MD5 :";
             // 
             // tbSizeSYS
             // 
             this.tbSizeSYS.Location = new System.Drawing.Point(206, 138);
             this.tbSizeSYS.Name = "tbSizeSYS";
+            this.tbSizeSYS.ReadOnly = true;
             this.tbSizeSYS.Size = new System.Drawing.Size(132, 22);
             this.tbSizeSYS.TabIndex = 10;
             this.tbSizeSYS.TabStop = false;
@@ -172,11 +131,68 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Firmware Size :";
             // 
+            // tbVersionSYS
+            // 
+            this.tbVersionSYS.Location = new System.Drawing.Point(206, 102);
+            this.tbVersionSYS.Name = "tbVersionSYS";
+            this.tbVersionSYS.ReadOnly = true;
+            this.tbVersionSYS.Size = new System.Drawing.Size(132, 22);
+            this.tbVersionSYS.TabIndex = 5;
+            this.tbVersionSYS.TabStop = false;
+            this.tbVersionSYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Firmware Label : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 14);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Firmware Version :";
+            // 
+            // tbFWLabelSYS
+            // 
+            this.tbFWLabelSYS.Location = new System.Drawing.Point(206, 32);
+            this.tbFWLabelSYS.Name = "tbFWLabelSYS";
+            this.tbFWLabelSYS.ReadOnly = true;
+            this.tbFWLabelSYS.Size = new System.Drawing.Size(132, 22);
+            this.tbFWLabelSYS.TabIndex = 1;
+            this.tbFWLabelSYS.TabStop = false;
+            this.tbFWLabelSYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSDKVersionSYS
+            // 
+            this.tbSDKVersionSYS.Location = new System.Drawing.Point(206, 67);
+            this.tbSDKVersionSYS.Name = "tbSDKVersionSYS";
+            this.tbSDKVersionSYS.ReadOnly = true;
+            this.tbSDKVersionSYS.Size = new System.Drawing.Size(132, 22);
+            this.tbSDKVersionSYS.TabIndex = 3;
+            this.tbSDKVersionSYS.TabStop = false;
+            this.tbSDKVersionSYS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 14);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "SDK Version :";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(374, 33);
+            this.groupBox3.Location = new System.Drawing.Point(374, 47);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(243, 126);
             this.groupBox3.TabIndex = 8;
@@ -195,7 +211,7 @@
             "Japan",
             "Korea",
             "Latin/Central America",
-            "North America",
+            "United States",
             "Rusia",
             "Southeast Asia",
             "Taiwan",
@@ -214,12 +230,12 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Download ";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tbLinkREC);
-            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.tbMD5REC);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tbSizeREC);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.label11);
@@ -229,34 +245,37 @@
             this.groupBox2.Controls.Add(this.tbFWVersion);
             this.groupBox2.Controls.Add(this.tbFWLabelREC);
             this.groupBox2.Controls.Add(this.tbSDKVersionREC);
-            this.groupBox2.Location = new System.Drawing.Point(22, 247);
+            this.groupBox2.Location = new System.Drawing.Point(14, 276);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(662, 226);
-            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recovery Firmware Info";
             // 
-            // tbLinkREC
+            // tbMD5REC
             // 
-            this.tbLinkREC.Location = new System.Drawing.Point(206, 176);
-            this.tbLinkREC.Name = "tbLinkREC";
-            this.tbLinkREC.Size = new System.Drawing.Size(411, 22);
-            this.tbLinkREC.TabIndex = 15;
-            this.tbLinkREC.TabStop = false;
+            this.tbMD5REC.Location = new System.Drawing.Point(206, 173);
+            this.tbMD5REC.Name = "tbMD5REC";
+            this.tbMD5REC.ReadOnly = true;
+            this.tbMD5REC.Size = new System.Drawing.Size(411, 22);
+            this.tbMD5REC.TabIndex = 15;
+            this.tbMD5REC.TabStop = false;
+            this.tbMD5REC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label12
+            // label7
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(43, 179);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 14);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Link :";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(43, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 14);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "MD5 :";
             // 
             // tbSizeREC
             // 
             this.tbSizeREC.Location = new System.Drawing.Point(206, 139);
             this.tbSizeREC.Name = "tbSizeREC";
+            this.tbSizeREC.ReadOnly = true;
             this.tbSizeREC.Size = new System.Drawing.Size(132, 22);
             this.tbSizeREC.TabIndex = 13;
             this.tbSizeREC.TabStop = false;
@@ -281,14 +300,14 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Download ";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "North America",
+            "United States",
             "United Kingdom",
             "Australia",
             "Brazil",
@@ -345,6 +364,7 @@
             // 
             this.tbFWVersion.Location = new System.Drawing.Point(206, 102);
             this.tbFWVersion.Name = "tbFWVersion";
+            this.tbFWVersion.ReadOnly = true;
             this.tbFWVersion.Size = new System.Drawing.Size(132, 22);
             this.tbFWVersion.TabIndex = 5;
             this.tbFWVersion.TabStop = false;
@@ -354,6 +374,7 @@
             // 
             this.tbFWLabelREC.Location = new System.Drawing.Point(206, 29);
             this.tbFWLabelREC.Name = "tbFWLabelREC";
+            this.tbFWLabelREC.ReadOnly = true;
             this.tbFWLabelREC.Size = new System.Drawing.Size(132, 22);
             this.tbFWLabelREC.TabIndex = 1;
             this.tbFWLabelREC.TabStop = false;
@@ -363,16 +384,88 @@
             // 
             this.tbSDKVersionREC.Location = new System.Drawing.Point(206, 66);
             this.tbSDKVersionREC.Name = "tbSDKVersionREC";
+            this.tbSDKVersionREC.ReadOnly = true;
             this.tbSDKVersionREC.Size = new System.Drawing.Size(132, 22);
             this.tbSDKVersionREC.TabIndex = 3;
             this.tbSDKVersionREC.TabStop = false;
             this.tbSDKVersionREC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tbFWVersionBETA);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.tbSDKBETA);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Location = new System.Drawing.Point(13, 508);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(662, 80);
+            this.groupBox5.TabIndex = 10;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Latest Beta Firmware";
+            // 
+            // tbFWVersionBETA
+            // 
+            this.tbFWVersionBETA.Location = new System.Drawing.Point(509, 32);
+            this.tbFWVersionBETA.Name = "tbFWVersionBETA";
+            this.tbFWVersionBETA.ReadOnly = true;
+            this.tbFWVersionBETA.Size = new System.Drawing.Size(132, 22);
+            this.tbFWVersionBETA.TabIndex = 5;
+            this.tbFWVersionBETA.TabStop = false;
+            this.tbFWVersionBETA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(349, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(133, 14);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Roll Back Firmware :";
+            // 
+            // tbSDKBETA
+            // 
+            this.tbSDKBETA.Location = new System.Drawing.Point(174, 32);
+            this.tbSDKBETA.Name = "tbSDKBETA";
+            this.tbSDKBETA.ReadOnly = true;
+            this.tbSDKBETA.Size = new System.Drawing.Size(132, 22);
+            this.tbSDKBETA.TabIndex = 3;
+            this.tbSDKBETA.TabStop = false;
+            this.tbSDKBETA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(21, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 14);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Firmware Version :";
+            // 
+            // tbmandatory
+            // 
+            this.tbmandatory.Location = new System.Drawing.Point(207, 172);
+            this.tbmandatory.Name = "tbmandatory";
+            this.tbmandatory.ReadOnly = true;
+            this.tbmandatory.Size = new System.Drawing.Size(132, 22);
+            this.tbmandatory.TabIndex = 14;
+            this.tbmandatory.TabStop = false;
+            this.tbmandatory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(44, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 14);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Mandatory :";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 488);
+            this.ClientSize = new System.Drawing.Size(688, 603);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,40 +484,48 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbFWLabelSYS;
-        private System.Windows.Forms.TextBox tbSDKVersionSYS;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbVersionSYS;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbFWVersion;
-        private System.Windows.Forms.TextBox tbFWLabelREC;
-        private System.Windows.Forms.TextBox tbSDKVersionREC;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbLinkSYS;
+        private System.Windows.Forms.TextBox tbMD5SYS;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbSizeSYS;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbVersionSYS;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbFWLabelSYS;
+        private System.Windows.Forms.TextBox tbSDKVersionSYS;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox tbMD5REC;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbSizeREC;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbLinkREC;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbFWVersion;
+        private System.Windows.Forms.TextBox tbFWLabelREC;
+        private System.Windows.Forms.TextBox tbSDKVersionREC;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox tbFWVersionBETA;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tbSDKBETA;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbmandatory;
+        private System.Windows.Forms.Label label8;
     }
 }
 
