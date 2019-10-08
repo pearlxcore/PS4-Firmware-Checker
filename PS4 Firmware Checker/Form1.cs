@@ -45,7 +45,9 @@ namespace PS4_Firmware_Checker
                 if (!Directory.Exists(path + "\\Temp"))
                 {
                     Directory.CreateDirectory(path + "\\Temp");
-                   
+
+                    try
+                    {
                         var nasdaq = string.Format(@"https://fus01.ps4.update.playstation.net/update/ps4/beta/list/us/ps4-eap-updatelist_PR2daYNOWIyy6WYwNw5JVwsRAWMl85Av.xml");
                         using (WebClient wc = new WebClient())
                         {
@@ -78,11 +80,15 @@ namespace PS4_Firmware_Checker
 
                             tbFWVersionBETA.Text = first_4_rollback_final.Insert(1, ".");
                         });
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Could not retrieved beta firmware info", "PS4 Firmware Checker");
+                    }
+                   
 
 
-
-
-                        using (WebClient retailDownloadXML = new WebClient())
+                    using (WebClient retailDownloadXML = new WebClient())
                         
 
                         retailDownloadXML.DownloadFile("http://fus01.ps4.update.playstation.net/update/ps4/list/sa/ps4-updatelist.xml", path + "\\Temp\\ps4-updatelist.xml");

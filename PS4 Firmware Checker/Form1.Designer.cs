@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbmandatory = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tbMD5SYS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbSizeSYS = new System.Windows.Forms.TextBox();
@@ -62,8 +64,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tbSDKBETA = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.tbmandatory = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,6 +92,25 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "System Firmware Info";
+            // 
+            // tbmandatory
+            // 
+            this.tbmandatory.Location = new System.Drawing.Point(207, 172);
+            this.tbmandatory.Name = "tbmandatory";
+            this.tbmandatory.ReadOnly = true;
+            this.tbmandatory.Size = new System.Drawing.Size(132, 22);
+            this.tbmandatory.TabIndex = 14;
+            this.tbmandatory.TabStop = false;
+            this.tbmandatory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(44, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 14);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Mandatory :";
             // 
             // tbMD5SYS
             // 
@@ -440,25 +459,6 @@
             this.label15.Size = new System.Drawing.Size(124, 14);
             this.label15.TabIndex = 2;
             this.label15.Text = "Firmware Version :";
-            // 
-            // tbmandatory
-            // 
-            this.tbmandatory.Location = new System.Drawing.Point(207, 172);
-            this.tbmandatory.Name = "tbmandatory";
-            this.tbmandatory.ReadOnly = true;
-            this.tbmandatory.Size = new System.Drawing.Size(132, 22);
-            this.tbmandatory.TabIndex = 14;
-            this.tbmandatory.TabStop = false;
-            this.tbmandatory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 14);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Mandatory :";
             // 
             // Form1
             // 
