@@ -219,152 +219,133 @@ namespace PS4_Firmware_Checker
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == "Southeast Asia")
+            switch(comboBox1.SelectedItem)
             {
-                url = LinkSys + "?dest=sa";
-                System.Diagnostics.Process.Start(url.ToString());
+               case "Southeast Asia":
+                   url = LinkSys + "?dest=sa";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "United Kindom":
+                   LinkSys = LinkSys.Replace("dsa01", "duk01");
+                   url = LinkSys + "?dest=uk";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Australia":
+                   LinkSys = LinkSys.Replace("dsa01", "dau01");
+                   url = LinkSys + "?dest=au";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Brazil":
+                   LinkSys = LinkSys.Replace("dsa01", "dbr01");
+                   url = LinkSys + "?dest=br";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "China":
+                   LinkSys = LinkSys.Replace("dsa01", "dcn01");
+                   url = LinkSys + "?dest=cn";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "European Union":
+                   LinkSys = LinkSys.Replace("dsa01", "deu01");
+                   url = LinkSys + "?dest=eu";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Latin/Central Americca":
+                   LinkSys = LinkSys.Replace("dsa01", "dmx01");
+                   url = LinkSys + "?dest=mx";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Russia":
+                   LinkSys = LinkSys.Replace("dsa01", "dru01");
+                   url = LinkSys + "?dest=ru";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Taiwan":
+                   LinkSys = LinkSys.Replace("dsa01", "dtw01");
+                   url = LinkSys + "?dest=tw";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Japan":
+                   LinkSys = LinkSys.Replace("dsa01", "djp01");
+                   url = LinkSys + "?dest=jp";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Korea":
+                   LinkSys = LinkSys.Replace("dsa01", "dkr01");
+                   url = LinkSys + "?dest=kr";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "United States":
+                   LinkSys = LinkSys.Replace("dsa01", "dus01");
+                   url = LinkSys + "?dest=us";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
             }
-            else if (comboBox1.SelectedItem == "United Kingdom")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "duk01");
-                url = LinkSys + "?dest=uk";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Australia")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dau01");
-                url = LinkSys + "?dest=au";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Brazil")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dbr01");
-                url = LinkSys + "?dest=br";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "China")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dcn01");
-                url = LinkSys + "?dest=cn";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "European Union")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "deu01");
-                url = LinkSys + "?dest=eu";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Latin/Central America")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dmx01");
-                url = LinkSys + "?dest=mx";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Rusia")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dru01");
-                url = LinkSys + "?dest=ru";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Taiwan")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dtw01");
-                url = LinkSys + "?dest=tw";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Japan")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "djp01");
-                url = LinkSys + "?dest=jp";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "Korea")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dkr01");
-                url = LinkSys + "?dest=kr";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox1.SelectedItem == "United States")
-            {
-                LinkSys = LinkSys.Replace("dsa01", "dus01");
-                url = LinkSys + "?dest=us";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedItem == "Southeast Asia")
+            switch(comboBox2.SelectedItem)
             {
-                url = LinkRec + "?dest=sa";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "United Kingdom")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "duk01");
-                url = LinkRec + "?dest=uk";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Australia")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dau01");
-                url = LinkRec + "?dest=au";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Brazil")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dbr01");
-                url = LinkRec + "?dest=br";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "China")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dcn01");
-                url = LinkRec + "?dest=cn";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "European Union")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "deu01");
-                url = LinkRec + "?dest=eu";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Latin/Central America")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dmx01");
-                url = LinkRec + "?dest=mx";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Rusia")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dru01");
-                url = LinkRec + "?dest=ru";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Taiwan")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dtw01");
-                url = LinkRec + "?dest=tw";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Japan")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "djp01");
-                url = LinkRec + "?dest=jp";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "Korea")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dkr01");
-                url = LinkRec + "?dest=kr";
-                System.Diagnostics.Process.Start(url.ToString());
-            }
-            else if (comboBox2.SelectedItem == "United States")
-            {
-                LinkRec = LinkRec.Replace("dsa01", "dus01");
-                url = LinkRec + "?dest=us";
-                System.Diagnostics.Process.Start(url.ToString());
+               case "Southeast Asia":
+                   url = LinkRec + "?dest=sa";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "United Kindom":
+                   LinkSys = LinkRec.Replace("dsa01", "duk01");
+                   url = LinkRec + "?dest=uk";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Australia":
+                   LinkSys = LinkRec.Replace("dsa01", "dau01");
+                   url = LinkRec + "?dest=au";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Brazil":
+                   LinkSys = LinkRec.Replace("dsa01", "dbr01");
+                   url = LinkRec + "?dest=br";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "China":
+                   LinkSys = LinkRec.Replace("dsa01", "dcn01");
+                   url = LinkRec + "?dest=cn";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "European Union":
+                   LinkSys = LinkRec.Replace("dsa01", "deu01");
+                   url = LinkRec + "?dest=eu";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Latin/Central Americca":
+                   LinkSys = LinkRec.Replace("dsa01", "dmx01");
+                   url = LinkRec + "?dest=mx";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Russia":
+                   LinkSys = LinkRec.Replace("dsa01", "dru01");
+                   url = LinkRec + "?dest=ru";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Taiwan":
+                   LinkSys = LinkRec.Replace("dsa01", "dtw01");
+                   url = LinkRec + "?dest=tw";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Japan":
+                   LinkSys = LinkRec.Replace("dsa01", "djp01");
+                   url = LinkRec + "?dest=jp";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "Korea":
+                   LinkSys = LinkRec.Replace("dsa01", "dkr01");
+                   url = LinkRec + "?dest=kr";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
+               case "United States":
+                   LinkSys = LinkRec.Replace("dsa01", "dus01");
+                   url = LinkRec + "?dest=us";
+                   System.Diagnostics.Process.Start(url.ToString());
+               break;
             }
         }
     }
